@@ -28,8 +28,14 @@
     font-style: normal;
     font-display: swap;
 }
+
+* , *::before , *::after {
+    box-sizing: inherit;
+}
+
 html {
     background-color: #E5E5E5;
+    box-sizing: border-box;
 }
 
 body {
@@ -48,24 +54,23 @@ p, h1, h2, h3, ul, li, img {
                                     /* Header */
 .page-header {
     width: 1440px;
-    height: 116px;
     background-color: #FAFAFA;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 37px 34px 36px 80px;
 }
 
 .page-header .logo {
     width: 41px;
     height: 39px;
-    margin-left: 80px;
 }
 
 .page-header__main-menu {
-    width: 331px;
     display:flex;
     list-style: none;
-    margin-left: 60px; /* Кажется это костыль, но без него меню сильно уходит влево, не пойму почему так*/
+    margin-left: 62px; /* Кажется это костыль, но без него меню сильно уходит влево,
+                            из-за распределения свободного пространства во флексе*/
 }
 
 .page-header__main-menu li {
@@ -84,9 +89,7 @@ p, h1, h2, h3, ul, li, img {
 }
 
 .page-header__button {
-    width: 150px;
-    height:45px;
-    margin-right: 34px;
+    padding: 11px 25px 9px 23px;
     background-color: #FAFAFA;
     border: 1px solid #F7941E;
     border-radius: 5px;
@@ -99,47 +102,44 @@ p, h1, h2, h3, ul, li, img {
                         /*Slogan and "How we work" sections */
 .slogan {
     width: 1440px;
-    height: 700px;
+    height: 700px; /*Если убрать высоту, то внизу появляется отступ 5px, произошло когда оберул img в div*/
     background-color: #F1F1F2;
     display: flex;
 }
 
 .slogan__wrapper {
     width: 721px;
-}
-
-.slogan__content {
-    margin:144px 126px 135px 162px;
-    width: 433px;
-    height: 421px;
+    padding: 144px 126px 135px 162px;
 }
 
 .slogan__title {
     font-size:56px;
     line-height: 69px;
-}
-
-.slogan__title span {
-    letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
 .slogan__subtitle {
     font-size:20px;
-    line-height: 30px;
-    margin-top: 39px;
+    line-height: 28px;
+    margin-bottom: 57px;
 }
 
 .slogan__button {
-    width: 200px;
-    height: 60px;
+    padding: 20px 33px 17px 35px;
     background-color: #F7941E;
-    border:5px solid #F7941E;
+    border:1px solid #F7941E;
     border-radius: 5px;
     color:#FFFFFF;
     font-size: 18px;
     line-height: 22px;
     text-transform: uppercase;
-    margin-top: 57px;
+}
+
+.slogan__image ,
+.how-we-work__image {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .how-we-work {
@@ -149,37 +149,34 @@ p, h1, h2, h3, ul, li, img {
     display: flex;
 }
 
-.how-we-work__content {
-    width: 441px;
-    height: 342px;
-    margin:154px 166px 104px 102px;
-    padding-left: 10px;
+.how-we-work__wrapper {
+    width: 719px;
+    padding: 156px 166px 104px 112px;
 }
 
 .how-we-work__title {
     font-size:32px;
     font-weight: normal;
     line-height: 45px;
-    padding-top: 2px;
+    margin-bottom: 26px;
 }
 
 .how-we-work__subtitle {
     font-size: 20px;
     line-height: 28px;
     text-align: justify;
-    padding-top: 26px;
+    margin-bottom: 60px;
 }
 
 .how-we-work__button {
-    width:200px;
-    height: 60px;
-    margin-top: 41px;
+    padding:18px 45px 18px 46px;
     border: 1px solid #F7941E;
     border-radius: 5px;
     color:#F7941E;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
                                 /*Posts tall section*/
