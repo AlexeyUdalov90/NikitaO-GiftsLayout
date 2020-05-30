@@ -1,10 +1,46 @@
-body {
-    margin: 0 auto;
-    font-family: "Gilroy" , sans-serif;  /*Или все таки Serif? никак не могу понять какой шрифт из базовых какой*/
+                            /*Шрифты и базовые стили*/
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-Regular.woff2) format("woff2"),
+         url(fonts/Gilroy-Regular.woff) format("woff"),
+         url(fonts/Gilroy-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-RegularItalic.woff2) format("woff2"),
+         url(fonts/Gilroy-RegularItalic.woff) format("woff"),
+         url(fonts/Gilroy-RegularItalic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-Bold.woff2) format("woff2"),
+         url(fonts/Gilroy-Bold.woff) format("woff"),
+         url(fonts/Gilroy-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+html {
     background-color: #E5E5E5;
 }
 
-p , h1, h2, h3 , ul , li , img {
+body {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: "Gilroy" , sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+p, h1, h2, h3, ul, li, img {
     margin: 0;
     padding: 0;
 }
@@ -17,7 +53,6 @@ p , h1, h2, h3 , ul , li , img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
 }
 
 .page-header .logo {
@@ -26,8 +61,8 @@ p , h1, h2, h3 , ul , li , img {
     margin-left: 80px;
 }
 
-.page-header__main-menu {  
-    width: 331px;            
+.page-header__main-menu {
+    width: 331px;
     display:flex;
     list-style: none;
     margin-left: 60px; /* Кажется это костыль, но без него меню сильно уходит влево, не пойму почему так*/
@@ -67,7 +102,6 @@ p , h1, h2, h3 , ul , li , img {
     height: 700px;
     background-color: #F1F1F2;
     display: flex;
-    margin: 0 auto;
 }
 
 .slogan__wrapper {
@@ -113,7 +147,6 @@ p , h1, h2, h3 , ul , li , img {
     height: 600px;
     background-color: #F1F1F2;
     display: flex;
-    margin: 0 auto;
 }
 
 .how-we-work__content {
@@ -153,7 +186,6 @@ p , h1, h2, h3 , ul , li , img {
 .posts-tall {
     width: 1440px;
     height: 820px;
-    margin: 0 auto;
     background-color: #FFFFFF;
 }
 
@@ -203,7 +235,7 @@ p , h1, h2, h3 , ul , li , img {
     не знаю как от него избавиться по другому*/
 }
 
-.posts-tall__cards:first-of-type .posts-tall__card-label , 
+.posts-tall__cards:first-of-type .posts-tall__card-label ,
 .posts-tall__cards:first-of-type img {
     background-color: #FFFFFF;
     box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
@@ -235,7 +267,6 @@ p , h1, h2, h3 , ul , li , img {
     height: 240px;
     box-sizing: border-box;
     background-color: #F7941E;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     padding:0 235px;
@@ -282,7 +313,6 @@ p , h1, h2, h3 , ul , li , img {
     width: 1440px;
     height: 1026px;
     background-color: #FFFFFF;
-    margin: 0 auto;
 }
 
 .blog-section h2 {
@@ -385,7 +415,6 @@ p , h1, h2, h3 , ul , li , img {
     width: 1440px;
     height: 410px;
     background-color: #FAFAFA;
-    margin: 0 auto;
     padding-top: 111px;
 }
 
