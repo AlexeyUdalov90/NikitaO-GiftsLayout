@@ -51,6 +51,12 @@ p, h1, h2, h3, ul, li, img {
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
                                     /* Header */
 .page-header {
     width: 1440px;
@@ -135,13 +141,6 @@ p, h1, h2, h3, ul, li, img {
     text-transform: uppercase;
 }
 
-.slogan__image ,
-.how-we-work__image {
-    max-width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-
 .how-we-work {
     width: 1440px;
     height: 600px;
@@ -182,25 +181,23 @@ p, h1, h2, h3, ul, li, img {
                                 /*Posts tall section*/
 .posts-tall {
     width: 1440px;
-    height: 820px;
     background-color: #FFFFFF;
-}
-
-.posts-tall__title-wrapper {
-    text-align: center;
-    padding: 91px 0 69px 0;
+    padding: 91px 135px 137px 135px;
 }
 
 .posts-tall__title {
     font-size: 32px;
     line-height: 38px;
     font-weight: normal;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .posts-tall__subtitle {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 25px;
+    text-align: center;
+    margin-bottom: 69px;
 }
 
 .posts-tall__cards-wrapper {
@@ -209,65 +206,52 @@ p, h1, h2, h3, ul, li, img {
 
 .posts-tall__cards {
     width: 270px;
-    height: 436px;
-    padding-right: 30px;
+    margin-right: 30px;
 }
 
 .posts-tall__cards:last-of-type {
-    padding-right:0;
+    margin-right:0;
 }
 
-.posts-tall__cards:first-of-type {
-    padding-left: 135px;
+.posts-tall__cards:hover {
+    background-color:#FFFFFF;
+    box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
 }
 
-.posts-tall__cards img {
+.posts-tall__cards .posts-tall__cards-image {
     width: 270px;
     height: 270px;
 }
 
 .posts-tall__card-label {
     background-color: #FAFAFA;
-    margin-top: -5px; /* Снова костыль, между картинкой и блоком расстояние в 5px, 
+    margin-top: -7px; /* Снова костыль, между картинкой и блоком расстояние в 7px, 
     не знаю как от него избавиться по другому*/
-}
-
-.posts-tall__cards:first-of-type .posts-tall__card-label ,
-.posts-tall__cards:first-of-type img {
-    background-color: #FFFFFF;
-    box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
+    padding: 22px 24px 24px 24px;
 }
 
 .posts-tall__card-title {
     display: block;
-    padding: 22px 24px 74px 24px;
+    margin-bottom:72px;
     font-size: 20px;
     line-height: 24px;
     font-weight: normal;
 }
 
 .posts-tall__card-label a {
-    display: inline-block;
     font-family: "Roboto" , sans-serif;
-    padding-bottom: 25px;
     font-size: 14px;
     line-height: 19px;
-    padding-left:24px;
-    padding-top: 3px;
     text-decoration: none;
     color: #000000;
 }
-
                                     /*STA section*/
 .CTA-section {
     width: 1440px;
-    height: 240px;
-    box-sizing: border-box;
     background-color: #F7941E;
     display: flex;
     align-items: center;
-    padding:0 235px;
-    
+    padding:77px 235px 73px 235px;
 }
 
 .CTA-section__title {
@@ -278,32 +262,31 @@ p, h1, h2, h3, ul, li, img {
 
 .CTA-section__subtitle {
     font-size: 32px;
-    line-height: 45px;   
+    line-height: 45px;
 }
 
-.CTA-section__button {
-    box-sizing: border-box;
-    width: 200px;
-    height: 50px;
+.CTA-section__button , 
+.CTA-section__link {
+    padding: 15px 33px 13px 35px;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 22px;
     border-radius: 5px;
-    margin-top: 1px;
     text-align: center;
 }
 
-.CTA-section__button:first-of-type {
-    margin-left: 231px;
-    margin-right: 16px;
+.CTA-section__button {
     background-color: #231F20;
     border: 1px solid #231F20;
     color: #FFFFFF;
+    margin:0 16px 0 auto;
 }
 
-.CTA-section__button:last-of-type {
+.CTA-section__link {
     border: 1px solid #231F20;
     background-color: #F7941E;
+    color:#231F20;
+    text-decoration: none;
 }
                              /*Blog section*/
 .blog-section {
