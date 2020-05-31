@@ -1,36 +1,100 @@
-body {
-    margin: 0 auto;
-    font-family: "Gilroy" , sans-serif;  /*Или все таки Serif? никак не могу понять какой шрифт из базовых какой*/
-    background-color: #E5E5E5;
+                            /*Шрифты и базовые стили*/
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-Regular.woff2) format("woff2"),
+         url(fonts/Gilroy-Regular.woff) format("woff"),
+         url(fonts/Gilroy-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-p , h1, h2, h3 , ul , li , img {
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-RegularItalic.woff2) format("woff2"),
+         url(fonts/Gilroy-RegularItalic.woff) format("woff"),
+         url(fonts/Gilroy-RegularItalic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(fonts/Gilroy-Bold.woff2) format("woff2"),
+         url(fonts/Gilroy-Bold.woff) format("woff"),
+         url(fonts/Gilroy-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* , *::before , *::after {
+    box-sizing: inherit;
+}
+
+html {
+    background-color: #E5E5E5;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: "Gilroy" , sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+p, h1, h2, h3, ul, li, img {
     margin: 0;
     padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.page-header__main-menu a:hover,
+.posts-tall__card-label a:hover,
+.blog-section__article-content a:hover,
+.blog-section__article a:hover,
+.page-footer__menu li a:hover {
+    text-decoration: underline;
+    text-shadow: 2px -2px 10px  #F7941E;
+}
+
+.page-header__button:hover ,
+.slogan__button:hover,
+.how-we-work__button:hover,
+.CTA-section__button:hover,
+.CTA-section__link:hover {
+    background-color: rgb(207, 89, 128);
+    color: aquamarine;
 }
 
                                     /* Header */
 .page-header {
     width: 1440px;
-    height: 116px;
     background-color: #FAFAFA;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    padding: 37px 34px 36px 80px;
 }
 
 .page-header .logo {
     width: 41px;
     height: 39px;
-    margin-left: 80px;
 }
 
-.page-header__main-menu {  
-    width: 331px;            
+.page-header__main-menu {
     display:flex;
     list-style: none;
-    margin-left: 60px; /* Кажется это костыль, но без него меню сильно уходит влево, не пойму почему так*/
+    margin-left: 62px; /* Кажется это костыль, но без него меню сильно уходит влево,
+                            из-за распределения свободного пространства во флексе*/
 }
 
 .page-header__main-menu li {
@@ -49,13 +113,11 @@ p , h1, h2, h3 , ul , li , img {
 }
 
 .page-header__button {
-    width: 150px;
-    height:45px;
-    margin-right: 34px;
+    padding: 11px 25px 9px 23px;
     background-color: #FAFAFA;
     border: 1px solid #F7941E;
     border-radius: 5px;
-    color: #F7941E;
+    color: rgb(233, 141, 29);
     text-transform: uppercase;
     font-size: 18px;
     line-height: 22px;
@@ -64,48 +126,37 @@ p , h1, h2, h3 , ul , li , img {
                         /*Slogan and "How we work" sections */
 .slogan {
     width: 1440px;
-    height: 700px;
+    height: 700px; /*Если убрать высоту, то внизу появляется отступ 5px, произошло когда оберул img в div*/
     background-color: #F1F1F2;
     display: flex;
-    margin: 0 auto;
 }
 
-.slogan__wrapper {
+.slogan__wrapper { /*Либо враппер и паддинги, либо без него и марджины для контента или есть 3ий вариант?*/
     width: 721px;
-}
-
-.slogan__content {
-    margin:144px 126px 135px 162px;
-    width: 433px;
-    height: 421px;
+    padding: 144px 126px 135px 162px;
 }
 
 .slogan__title {
     font-size:56px;
     line-height: 69px;
-}
-
-.slogan__title span {
-    letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
 .slogan__subtitle {
     font-size:20px;
-    line-height: 30px;
-    margin-top: 39px;
+    line-height: 28px;
+    margin-bottom: 57px;
 }
 
 .slogan__button {
-    width: 200px;
-    height: 60px;
+    padding: 20px 33px 17px 35px;
     background-color: #F7941E;
-    border:5px solid #F7941E;
+    border:1px solid #F7941E;
     border-radius: 5px;
     color:#FFFFFF;
     font-size: 18px;
     line-height: 22px;
     text-transform: uppercase;
-    margin-top: 57px;
 }
 
 .how-we-work {
@@ -113,65 +164,58 @@ p , h1, h2, h3 , ul , li , img {
     height: 600px;
     background-color: #F1F1F2;
     display: flex;
-    margin: 0 auto;
 }
 
-.how-we-work__content {
-    width: 441px;
-    height: 342px;
-    margin:154px 166px 104px 102px;
-    padding-left: 10px;
+.how-we-work__wrapper {
+    width: 719px;
+    padding: 156px 166px 104px 112px;
 }
 
 .how-we-work__title {
     font-size:32px;
     font-weight: normal;
     line-height: 45px;
-    padding-top: 2px;
+    margin-bottom: 26px;
 }
 
 .how-we-work__subtitle {
     font-size: 20px;
     line-height: 28px;
     text-align: justify;
-    padding-top: 26px;
+    margin-bottom: 60px;
 }
 
 .how-we-work__button {
-    width:200px;
-    height: 60px;
-    margin-top: 41px;
+    padding:18px 45px 18px 46px;
     border: 1px solid #F7941E;
     border-radius: 5px;
     color:#F7941E;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
                                 /*Posts tall section*/
 .posts-tall {
     width: 1440px;
-    height: 820px;
-    margin: 0 auto;
     background-color: #FFFFFF;
-}
-
-.posts-tall__title-wrapper {
-    text-align: center;
-    padding: 91px 0 69px 0;
+    padding: 91px 135px 137px 135px;
 }
 
 .posts-tall__title {
     font-size: 32px;
     line-height: 38px;
     font-weight: normal;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .posts-tall__subtitle {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 25px;
+    text-align: center;
+    margin-bottom: 69px;
 }
 
 .posts-tall__cards-wrapper {
@@ -180,66 +224,46 @@ p , h1, h2, h3 , ul , li , img {
 
 .posts-tall__cards {
     width: 270px;
-    height: 436px;
-    padding-right: 30px;
+    margin-right: 30px;
 }
 
 .posts-tall__cards:last-of-type {
-    padding-right:0;
+    margin-right:0;
 }
 
-.posts-tall__cards:first-of-type {
-    padding-left: 135px;
-}
-
-.posts-tall__cards img {
-    width: 270px;
-    height: 270px;
+.posts-tall__cards:hover {
+    background-color:#FFFFFF;
+    box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
 }
 
 .posts-tall__card-label {
     background-color: #FAFAFA;
-    margin-top: -5px; /* Снова костыль, между картинкой и блоком расстояние в 5px, 
+    margin-top: -7px; /* Снова костыль, между картинкой и блоком расстояние в 7px, 
     не знаю как от него избавиться по другому*/
-}
-
-.posts-tall__cards:first-of-type .posts-tall__card-label , 
-.posts-tall__cards:first-of-type img {
-    background-color: #FFFFFF;
-    box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
+    padding: 22px 24px 24px 24px;
 }
 
 .posts-tall__card-title {
-    display: block;
-    padding: 22px 24px 74px 24px;
+    margin-bottom:72px;
     font-size: 20px;
     line-height: 24px;
     font-weight: normal;
 }
 
 .posts-tall__card-label a {
-    display: inline-block;
     font-family: "Roboto" , sans-serif;
-    padding-bottom: 25px;
     font-size: 14px;
     line-height: 19px;
-    padding-left:24px;
-    padding-top: 3px;
     text-decoration: none;
     color: #000000;
 }
-
                                     /*STA section*/
 .CTA-section {
     width: 1440px;
-    height: 240px;
-    box-sizing: border-box;
     background-color: #F7941E;
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    padding:0 235px;
-    
+    padding:77px 235px 73px 235px;
 }
 
 .CTA-section__title {
@@ -250,85 +274,82 @@ p , h1, h2, h3 , ul , li , img {
 
 .CTA-section__subtitle {
     font-size: 32px;
-    line-height: 45px;   
+    line-height: 45px;
 }
 
-.CTA-section__button {
-    box-sizing: border-box;
-    width: 200px;
-    height: 50px;
+.CTA-section__button , 
+.CTA-section__link {
+    padding: 15px 33px 13px 35px;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 22px;
     border-radius: 5px;
-    margin-top: 1px;
     text-align: center;
 }
 
-.CTA-section__button:first-of-type {
-    margin-left: 231px;
-    margin-right: 16px;
+.CTA-section__button {
     background-color: #231F20;
     border: 1px solid #231F20;
     color: #FFFFFF;
+    margin:0 16px 0 auto;
 }
 
-.CTA-section__button:last-of-type {
+.CTA-section__link {
     border: 1px solid #231F20;
     background-color: #F7941E;
+    color:#231F20;
+    text-decoration: none;
 }
                              /*Blog section*/
 .blog-section {
     width: 1440px;
-    height: 1026px;
     background-color: #FFFFFF;
-    margin: 0 auto;
+    padding: 83px 135px 80px 135px;
 }
 
 .blog-section h2 {
     font-size:32px;
     line-height: 38px;
     text-align: center;
-    padding-top: 83px;
+    margin-bottom: 25px;
 }
 
 .blog-section p {
     font-size:18px;
     line-height: 24px;
     text-align: center;
-    padding-top: 25px;
+    margin-bottom: 76px;
 }
 
 .blog-section__main-article {
-    width: 1170px;
-    height: 370px;
-    margin: 76px auto 40px auto;
     display: flex;
+    margin-bottom: 40px;
 }
 
-.blog-section__main-article>img {
-    width: 400px;
+.blog-section__main-article-image {
+    width: 540px; /*Из-за свойст для всех img ширина не соответствует изначальной (в макете 400px)*/
     height: 370px;
 }
 
 .blog-section__article-content {
     background-color: #231F20;
-    flex-grow: 1;
-    padding: 60px 200px 0 78px;
+    padding: 59px 200px 49px 78px;
     color: #FFFFFF;
 }
 
 .blog-section__article-content cite {
+    display: block;
     font-size: 14px;
     line-height: 20px;
     font-style: normal;
+    margin-bottom: 23px;
 }
 
 .blog-section__article-content h3 {
     font-size: 48px;
     line-height: 58px;
-    margin-top: 22px;
     margin-bottom: 72px;
+    font-weight: normal;
 }
 
 .blog-section__article-content a {
@@ -340,18 +361,19 @@ p , h1, h2, h3 , ul , li , img {
 
 .blog-section__article-wrapper {
     width:1170px;
-    height: 290px;
     display: flex;
-    margin: 0 auto;
 }
 
 .blog-section__article {
     width: 570px;
-    padding: 42px 50px 0 48px;
+    padding: 42px 50px 50px 48px;
 }
 
-.blog-section__article-wrapper .blog-section__article:first-of-type {
+.blog-section__article:first-of-type {
     margin-right:30px;
+}
+
+.blog-section__article:hover {
     box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
 }
 
@@ -359,40 +381,35 @@ p , h1, h2, h3 , ul , li , img {
     font-size: 24px;
     line-height: 34px;
     font-weight: bold;
+    margin-bottom: 17px;
 }
 
 .blog-section__article p {
     font-size: 18px;
     line-height: 25px;
     text-align:left;
-}
-
-.blog-section__article p {
-    font-size: 18px;
-    line-height: 25px;
-    margin-top: -8px; /*Снова костыль, из-за межстрочного интервала заголовка выше, 
-    у меня не получается попасть по высоте этого параграфа*/
-    margin-bottom:39px;
+    margin-bottom:36px;
 }
 
 .blog-section__article a {
     text-decoration: none;
     font-size: 14px;
     line-height: 20px;
+    color: #000000;
 }
                                 /*Footer*/
 .page-footer {
     width: 1440px;
-    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FAFAFA;
-    margin: 0 auto;
-    padding-top: 111px;
+    padding:111px 220px 35px 220px;
 }
 
 .page-footer__menu {
     display: flex;
-    width: 600px;
-    margin: 0 auto 38px 406px;
+    margin-bottom:32px;
 }
 
 .page-footer__menu li {
@@ -401,14 +418,19 @@ p , h1, h2, h3 , ul , li , img {
 
 .page-footer__menu li:first-of-type {
     margin-right: 81px;
+    margin-left: 40px; /*Необязательное свойство, подогнал под Pixel Perfect*/
 }
 
 .page-footer__menu li:nth-of-type(3) {
-    margin: 2px 141px 0 142px;
+    margin: auto 141px;
 }
 
 .page-footer__menu li:nth-of-type(4) {
-    margin-right:54px;
+    margin-right: 54px;
+}
+
+.page-footer__menu li:nth-of-type(5) { /*Необязательно, но при добавлении еще 1 элемента хоть выглядеть будет нормально*/
+    margin-right: 54px;
 }
 
 .page-footer__menu li a {
@@ -426,18 +448,16 @@ p , h1, h2, h3 , ul , li , img {
 }
 
 .page-footer__icons-list {
-    width: 296px;
-    margin: 0 auto 64px auto;
     display: flex;
-    justify-content: space-between;
+    margin-bottom:60px;
 }
 .page-footer__icons-list li {
     list-style: none;
+    margin-right:25px;
 }
 
-.page-footer__copyrights {
-    width: 210px;
-    margin: 0 auto;
+.page-footer__icons-list li:last-of-type {
+    margin-right:0;
 }
 
 .page-footer__copyrights span {
@@ -446,5 +466,5 @@ p , h1, h2, h3 , ul , li , img {
 }
 
 .page-footer__copyrights span:first-of-type {
-    margin-right: 10px;
+    margin-right: 14px;
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="fonts.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Gift Store Website</title>
@@ -26,53 +25,63 @@
         <section class="slogan">
             <div class="slogan__wrapper">
                 <div class="slogan__content">
-                    <h2 class="slogan__title">Find a gift for your wife or <span>girlfriend</span></h2>
+                    <h2 class="slogan__title">Find a gift for your wife or girlfriend</h2>
                     <p class="slogan__subtitle">Struggling to find a gift for your wife or girlfriend? No problem!</p>
                     <button class="slogan__button">Find gift now</button>
                 </div>
             </div>
-            <img src="images/Slogan-photo.jpg" alt="Фото улыбчивой девушки и парня">
+            <div class="slogan__image">
+                <img src="images/Slogan-photo.jpg" alt="Фото улыбчивых девушки и парня">
+            </div>
         </section>
         <section class="how-we-work" id="about-us-id">
-            <img src="images/envelope.png" alt="Черный конверт, на котором написано спасибо тебе">
+            <div class="how-we-work__image">
+                <img src="images/envelope.jpg" alt="Черный конверт, на котором написано спасибо тебе">
+            </div>
             <div class="how-we-work__wrapper">
                 <div class="how-we-work__content">
                     <h2 class="how-we-work__title">How we work</h2>
                     <p class="how-we-work__subtitle">We’ve actually already asked hundreds of women what they want, and made a database with the results. All you have to do is take our short survey that only takes seconds, and our proprietary algorithm will match you with a few perfect gift options.</p>
-                    <button class="how-we-work__button">Learn More</button>
+                    <a href="https://www.google.ru/" class="how-we-work__button">Learn More</a>
                 </div>
             </div>
         </section> 
     <!--Posts tall Section--> 
         <section class="posts-tall" id="service-id">
-            <div class="posts-tall__title-wrapper">
-                <h2 class="posts-tall__title">Gifts for all Occasions</h2>
-                <p class="posts-tall__subtitle">“Try our web app to find the best gifts for all occasions”</p>
-            </div>
+            <h2 class="posts-tall__title">Gifts for all Occasions</h2>
+            <p class="posts-tall__subtitle">“Try our web app to find the best gifts for all occasions”</p>
             <div class="posts-tall__cards-wrapper">
                 <div class="posts-tall__cards">
-                    <img src="images/birthday.png" alt="С днем рождения!">
+                    <div class="posts-tall__cards-image">
+                        <img src="images/birthday.png" alt="С днем рождения!">
+                    </div>
                     <div class="posts-tall__card-label">
                         <h3 class="posts-tall__card-title">Birthday</h3>
                         <a href="https://ru.wikipedia.org/wiki/День_рождения">See More ›</a>
                     </div>
                 </div>
                 <div class="posts-tall__cards">
-                    <img src="images/anniversary.png" alt="С днем рождения!">
+                    <div class="posts-tall__cards-image">
+                        <img src="images/anniversary.png" alt="С днем рождения!">
+                    </div>
                     <div class="posts-tall__card-label">
                         <h3 class="posts-tall__card-title">Anniversary</h3>
                         <a href="https://ru.wikipedia.org/wiki/Годовщины_свадьбы">See More ›</a>
                     </div>
                 </div>
                 <div class="posts-tall__cards">
-                    <img src="images/valentines-day.png" alt="С днем рождения!">
+                    <div class="posts-tall__cards-image">
+                        <img src="images/valentines-day.png" alt="С днем рождения!">
+                    </div>
                     <div class="posts-tall__card-label">
                         <h3 class="posts-tall__card-title">Valentine's Day</h3>
                         <a href="https://ru.wikipedia.org/wiki/День_святого_Валентина">See More ›</a>
                     </div>
                 </div>
                 <div class="posts-tall__cards">
-                    <img src="images/christmas.png" alt="С днем рождения!">
+                    <div class="posts-tall__cards-image">
+                        <img src="images/christmas.png" alt="С днем рождения!">
+                    </div>
                     <div class="posts-tall__card-label">
                         <h3 class="posts-tall__card-title">Christmas</h3>
                         <a href="https://ru.wikipedia.org/wiki/Рождество_Христово">See More ›</a>
@@ -86,15 +95,17 @@
                 <h2 class="CTA-section__title">Ready to get started?</h2>
                 <p class="CTA-section__subtitle">Sign up or contact us</p>
             </div>
-            <button class="CTA-section__button ">Find gift now</button>
-            <button class="CTA-section__button ">how it works</button>
+            <button class="CTA-section__button">Find gift now</button>
+            <a href="#" class="CTA-section__link ">how it works</a>
         </section>
         <!--Blog Section-->
         <section class="blog-section" id="blog-id">
             <h2>Our Best Blogs Ever</h2>
             <p>“Try our blog to find the best tips and tricks to select your gift”</p>
             <article class="blog-section__main-article">
-                <img src="images/wedding.jpg" alt="Улыбающиеся невеста с женихом">
+                <div class="blog-section__main-article-image">
+                    <img src="images/wedding.jpg" alt="Улыбающиеся невеста с женихом">
+                </div>
                 <div class="blog-section__article-content">
                     <cite>Mr. John Doe</cite>
                     <h3>The best way to wish your wife</h3>
