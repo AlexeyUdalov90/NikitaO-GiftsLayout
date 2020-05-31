@@ -236,11 +236,6 @@ img {
     box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
 }
 
-.posts-tall__cards .posts-tall__cards-image {
-    width: 270px;
-    height: 270px;
-}
-
 .posts-tall__card-label {
     background-color: #FAFAFA;
     margin-top: -7px; /* Снова костыль, между картинкой и блоком расстояние в 7px, 
