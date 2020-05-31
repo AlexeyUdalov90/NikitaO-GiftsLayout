@@ -59,6 +59,22 @@ img {
 
 .page-header__main-menu a:hover,
 .posts-tall__card-label a:hover,
+.blog-section__article-content a:hover,
+.blog-section__article a:hover,
+.page-footer__menu li a:hover {
+    text-decoration: underline;
+    text-shadow: 2px -2px 10px  #F7941E;
+}
+
+.page-header__button:hover ,
+.slogan__button:hover,
+.how-we-work__button:hover,
+.CTA-section__button:hover,
+.CTA-section__link:hover {
+    background-color: rgb(207, 89, 128);
+    color: aquamarine;
+}
+
                                     /* Header */
 .page-header {
     width: 1440px;
@@ -101,7 +117,7 @@ img {
     background-color: #FAFAFA;
     border: 1px solid #F7941E;
     border-radius: 5px;
-    color: #F7941E;
+    color: rgb(233, 141, 29);
     text-transform: uppercase;
     font-size: 18px;
     line-height: 22px;
@@ -115,7 +131,7 @@ img {
     display: flex;
 }
 
-.slogan__wrapper {
+.slogan__wrapper { /*Либо враппер и паддинги, либо без него и марджины для контента или есть 3ий вариант?*/
     width: 721px;
     padding: 144px 126px 135px 162px;
 }
@@ -233,7 +249,6 @@ img {
 }
 
 .posts-tall__card-title {
-    display: block;
     margin-bottom:72px;
     font-size: 20px;
     line-height: 24px;
@@ -293,54 +308,53 @@ img {
                              /*Blog section*/
 .blog-section {
     width: 1440px;
-    height: 1026px;
     background-color: #FFFFFF;
+    padding: 83px 135px 80px 135px;
 }
 
 .blog-section h2 {
     font-size:32px;
     line-height: 38px;
     text-align: center;
-    padding-top: 83px;
+    margin-bottom: 25px;
 }
 
 .blog-section p {
     font-size:18px;
     line-height: 24px;
     text-align: center;
-    padding-top: 25px;
+    margin-bottom: 76px;
 }
 
 .blog-section__main-article {
-    width: 1170px;
-    height: 370px;
-    margin: 76px auto 40px auto;
     display: flex;
+    margin-bottom: 40px;
 }
 
-.blog-section__main-article>img {
-    width: 400px;
+.blog-section__main-article-image {
+    width: 540px; /*Из-за свойст для всех img ширина не соответствует изначальной (в макете 400px)*/
     height: 370px;
 }
 
 .blog-section__article-content {
     background-color: #231F20;
-    flex-grow: 1;
-    padding: 60px 200px 0 78px;
+    padding: 59px 200px 49px 78px;
     color: #FFFFFF;
 }
 
 .blog-section__article-content cite {
+    display: block;
     font-size: 14px;
     line-height: 20px;
     font-style: normal;
+    margin-bottom: 23px;
 }
 
 .blog-section__article-content h3 {
     font-size: 48px;
     line-height: 58px;
-    margin-top: 22px;
     margin-bottom: 72px;
+    font-weight: normal;
 }
 
 .blog-section__article-content a {
@@ -352,18 +366,19 @@ img {
 
 .blog-section__article-wrapper {
     width:1170px;
-    height: 290px;
     display: flex;
-    margin: 0 auto;
 }
 
 .blog-section__article {
     width: 570px;
-    padding: 42px 50px 0 48px;
+    padding: 42px 50px 50px 48px;
 }
 
-.blog-section__article-wrapper .blog-section__article:first-of-type {
+.blog-section__article:first-of-type {
     margin-right:30px;
+}
+
+.blog-section__article:hover {
     box-shadow: 4px 4px 15px 0 rgb(233, 232, 232);
 }
 
@@ -371,39 +386,35 @@ img {
     font-size: 24px;
     line-height: 34px;
     font-weight: bold;
+    margin-bottom: 17px;
 }
 
 .blog-section__article p {
     font-size: 18px;
     line-height: 25px;
     text-align:left;
-}
-
-.blog-section__article p {
-    font-size: 18px;
-    line-height: 25px;
-    margin-top: -8px; /*Снова костыль, из-за межстрочного интервала заголовка выше, 
-    у меня не получается попасть по высоте этого параграфа*/
-    margin-bottom:39px;
+    margin-bottom:36px;
 }
 
 .blog-section__article a {
     text-decoration: none;
     font-size: 14px;
     line-height: 20px;
+    color: #000000;
 }
                                 /*Footer*/
 .page-footer {
     width: 1440px;
-    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FAFAFA;
-    padding-top: 111px;
+    padding:111px 220px 35px 220px;
 }
 
 .page-footer__menu {
     display: flex;
-    width: 600px;
-    margin: 0 auto 38px 406px;
+    margin-bottom:32px;
 }
 
 .page-footer__menu li {
@@ -412,14 +423,19 @@ img {
 
 .page-footer__menu li:first-of-type {
     margin-right: 81px;
+    margin-left: 40px; /*Необязательное свойство, подогнал под Pixel Perfect*/
 }
 
 .page-footer__menu li:nth-of-type(3) {
-    margin: 2px 141px 0 142px;
+    margin: auto 141px;
 }
 
 .page-footer__menu li:nth-of-type(4) {
-    margin-right:54px;
+    margin-right: 54px;
+}
+
+.page-footer__menu li:nth-of-type(5) { /*Необязательно, но при добавлении еще 1 элемента хоть выглядеть будет нормально*/
+    margin-right: 54px;
 }
 
 .page-footer__menu li a {
@@ -437,18 +453,16 @@ img {
 }
 
 .page-footer__icons-list {
-    width: 296px;
-    margin: 0 auto 64px auto;
     display: flex;
-    justify-content: space-between;
+    margin-bottom:60px;
 }
 .page-footer__icons-list li {
     list-style: none;
+    margin-right:25px;
 }
 
-.page-footer__copyrights {
-    width: 210px;
-    margin: 0 auto;
+.page-footer__icons-list li:last-of-type {
+    margin-right:0;
 }
 
 .page-footer__copyrights span {
@@ -457,5 +471,5 @@ img {
 }
 
 .page-footer__copyrights span:first-of-type {
-    margin-right: 10px;
+    margin-right: 14px;
 }
